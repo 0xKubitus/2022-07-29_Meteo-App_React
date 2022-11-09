@@ -117,7 +117,15 @@ versions:
 ## How to use this repo:
 
 Simply clone this repo on your machine, then open it in a Terminal window.
-Then you can copy and paste the following commands:
+
+Then, create an account and get a free API key on: `https://openweathermap.org/`.
+Create a `.env` file inside the `src` folder and add your API key by replacing <yourAPIkey> by the actual key you've just got from `https://openweathermap.org/`:
+
+```
+REACT_APP_OPENWEATHER_API_KEY = "<yourAPIkey>"
+```
+
+Finally, you can copy and paste the following commands in your Terminal (inside the project's directory):
 
 ```
 npm i
