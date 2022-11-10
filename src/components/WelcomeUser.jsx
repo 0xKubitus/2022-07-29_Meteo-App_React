@@ -1,7 +1,7 @@
 const WelcomeUser = () => {
     return (
         <header>
-            <h1>Welcome to 0xKubitus Weather forecast App!</h1>
+            <h1>Welcome to 0xKubitus Weather Forecast App!</h1>
         </header>
     );
 };

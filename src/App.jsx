@@ -9,10 +9,10 @@ const API_Key = process.env.REACT_APP_OPENWEATHER_API_KEY;
 const openWeatherAPIurlStart = "https://api.openweathermap.org/data/2.5/forecast?";
 
 function App() {
-    const [lat, setLat] = useState(undefined);
-    const [lon, setLon] = useState(undefined);
+    const [lat, setLat] = useState();
+    const [lon, setLon] = useState();
     const [userPositionIsShared, setUserPositionIsShared] = useState(undefined);
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,7 +30,10 @@ function App() {
 
             getCurrentWeatherData();
 
-            await fetch(`${openWeatherAPIurlStart}lat=${lat}&lon=${lon}&appid=${API_Key}`)
+            const requestURL = `${openWeatherAPIurlStart}lat=${lat}&lon=${lon}&appid=${API_Key}`;
+            console.log("requestURL = ", requestURL);
+
+            await fetch(requestURL)
                 .then((reponse) => reponse.json())
                 .then((result) => {
                     setData(result);
@@ -63,7 +66,7 @@ function App() {
         <div className="App">
             <WelcomeUser />
             {userPositionIsShared === undefined && <Loader />} {/* conditionnal rendering for 'Loader' component */}
-            {typeof data != "undefined" ? <DisplayWeatherForecast weatherData={data} /> : <div></div>} {/* when data is 'undefined' it will show an empty div, else it will return my 'DisplayWeatherForecast' component */}
+            {typeof data.cod != "undefined" ? <DisplayWeatherForecast data={data} /> : <div></div>} {/* when data is 'undefined' it will show an empty div, else it will return my 'DisplayWeatherForecast' component */}
             <h2 id="geolocRequestError" className="hidden">
                 {/* another kind (among many others) of conditionnal rendering */}
                 no error
