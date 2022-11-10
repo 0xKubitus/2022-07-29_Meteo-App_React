@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import WelcomeUser from "components/WelcomeUser";
 import Loader from "components/Loader/Loader";
+import DisplayWeatherForecast from "components/WeatherForecast";
 // import { ... } from "./helpers";
 
 const API_Key = process.env.REACT_APP_OPENWEATHER_API_KEY;
@@ -13,16 +14,20 @@ function App() {
     const [userPositionIsShared, setUserPositionIsShared] = useState(undefined);
     const [data, setData] = useState();
 
-    const successCallback = (position) => {
-        setLat(position.coords.latitude);
-        setLon(position.coords.longitude);
-        console.log("user current latitude = ", lat);
-        console.log("user current longitude = ", lon);
-        setUserPositionIsShared(true);
-    };
-
     useEffect(() => {
         const fetchData = async () => {
+            const getCurrentWeatherData = () => {
+                navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+            };
+
+            const successCallback = (position) => {
+                setLat(position.coords.latitude);
+                setLon(position.coords.longitude);
+                console.log("user current latitude = ", lat);
+                console.log("user current longitude = ", lon);
+                setUserPositionIsShared(true);
+            };
+
             getCurrentWeatherData();
 
             await fetch(`${openWeatherAPIurlStart}lat=${lat}&lon=${lon}&appid=${API_Key}`)
@@ -54,22 +59,13 @@ function App() {
         }
     };
 
-    const getCurrentWeatherData = () => {
-        // try {
-        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-        // } catch (err) {
-        //     console.error(err);
-        // }
-    };
-
-    // getCurrentWeatherData();
-
     return (
         <div className="App">
             <WelcomeUser />
-            {userPositionIsShared === undefined && <Loader />}
-
+            {userPositionIsShared === undefined && <Loader />} {/* conditionnal rendering for 'Loader' component */}
+            {typeof data != "undefined" ? <DisplayWeatherForecast weatherData={data} /> : <div></div>} {/* when data is 'undefined' it will show an empty div, else it will return my 'DisplayWeatherForecast' component */}
             <h2 id="geolocRequestError" className="hidden">
+                {/* another kind (among many others) of conditionnal rendering */}
                 no error
             </h2>
         </div>
