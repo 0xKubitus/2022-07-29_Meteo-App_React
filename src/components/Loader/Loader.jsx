@@ -10,6 +10,7 @@ const Loader = () => {
                     <ReactLoading type={list[7].prop} color="#ff3333" />
                 </Article>
             </Section>
+            <h2 id="loader-text">Please share your position to get an accurate forecast...</h2>
         </div>
     );
 };
