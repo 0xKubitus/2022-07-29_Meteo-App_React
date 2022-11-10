@@ -72,7 +72,17 @@ function App() {
         <div className="App">
             <WelcomeUser />
             {userPositionIsShared === undefined && <Loader />} {/* conditionnal rendering for 'Loader' component */}
-            {typeof data.cod != "undefined" ? <DisplayWeatherForecast data={data} /> : <div></div>} {/* when data is 'undefined' it will show an empty div, else it will return my 'DisplayWeatherForecast' component */}
+            {typeof data.city != "undefined" ? (
+                <div>
+                    <h2>
+                        <u>{data.city.name}</u> 5-Days Weather Forecast:
+                    </h2>
+                    <DisplayWeatherForecast data={data} />
+                </div>
+            ) : (
+                <div></div>
+            )}{" "}
+            {/* when data is 'undefined' it will show an empty div, else it will return my 'DisplayWeatherForecast' component */}
             <h2 id="geolocRequestError" className="hidden">
                 {/* another kind (among many others) of conditionnal rendering */}
                 no error
