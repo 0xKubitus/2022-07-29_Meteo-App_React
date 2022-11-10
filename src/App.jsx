@@ -37,7 +37,7 @@ function App() {
                 .then((reponse) => reponse.json())
                 .then((result) => {
                     setData(result);
-                    console.log(result);
+                    // console.log(result);
                 });
         };
 
