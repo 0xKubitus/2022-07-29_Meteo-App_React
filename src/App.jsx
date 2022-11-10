@@ -13,36 +13,42 @@ function App() {
     const [lon, setLon] = useState();
     const [userPositionIsShared, setUserPositionIsShared] = useState(undefined);
     const [data, setData] = useState([]);
+    const [userCity, setUserCity] = useState();
 
     useEffect(() => {
-        const fetchData = async () => {
-            const getCurrentWeatherData = () => {
+        const userGeolocalization = async () => {
+            const getUserCurrentPosition = () => {
                 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
             };
 
             const successCallback = (position) => {
                 setLat(position.coords.latitude);
                 setLon(position.coords.longitude);
-                console.log("user current latitude = ", lat);
-                console.log("user current longitude = ", lon);
+                // console.log("user current latitude = ", lat);
+                // console.log("user current longitude = ", lon);
                 setUserPositionIsShared(true);
             };
 
-            getCurrentWeatherData();
+            getUserCurrentPosition();
 
             const requestURL = `${openWeatherAPIurlStart}lat=${lat}&lon=${lon}&appid=${API_Key}`;
-            console.log("requestURL = ", requestURL);
+            // console.log("requestURL = ", requestURL);
 
             await fetch(requestURL)
-                .then((reponse) => reponse.json())
+                .then((response) => response.json())
                 .then((result) => {
                     setData(result);
-                    // console.log(result);
+                    console.log("API request results = ", result);
+                    setUserCity(result.city.name);
                 });
         };
 
-        fetchData();
+        userGeolocalization();
     }, [lat, lon]);
+
+    useEffect(() => {
+        console.log(`user position set to: ${userCity}`);
+    }, [userCity]);
 
     const errorCallback = (error) => {
         const geolocRequestError = document.getElementById("geolocRequestError");
