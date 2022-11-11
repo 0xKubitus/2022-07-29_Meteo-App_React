@@ -22,20 +22,3 @@ export const getDate = (date) => {
     };
     return new Date().getDay() === day ? "Today" : getDay();
 };
-
-// export const sortData = (data) => {
-//     const dataToday = {};
-//     const dataDayOne = {};
-//     const dataDayTwo = {};
-//     const dataDayThree = {};
-//     const dataDayFour = {};
-
-//     console.log(forecastData);
-//     // console.log("data.list.length = ", data.list.length);
-//     //     for (let i = 0; i < data.list.length; i++) {
-//     //         if (i < 9) {
-//     //             dataToday.push(data.list[i]);
-//     //         }
-//     //     }
-//     //     console.log(dataToday);
-// };
