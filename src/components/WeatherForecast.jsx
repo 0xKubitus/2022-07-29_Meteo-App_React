@@ -1,8 +1,31 @@
-import CardTemplate from "./CardTemplate";
+import { useState, useEffect } from "react";
+
+import CardTemplate from "components/CardTemplate";
+import { sortData } from "helpers.js";
 
 const DisplayWeatherForecast = ({ data }) => {
+    const [forecastData, setForecastData] = useState(data.list);
+
     const dataList = [];
     dataList.push(data.list[0], data.list[8], data.list[16], data.list[24], data.list[32]); // it'd be nice to find a better way to list the right objects but it's fine for now...
+
+    const sortData = (data) => {
+        const dataToday = {};
+        const dataDayOne = {};
+        const dataDayTwo = {};
+        const dataDayThree = {};
+        const dataDayFour = {};
+
+        console.log("forecastData.length = ", forecastData.length);
+        // for (let i = 0; i < forecastData.length; i++) {
+        //     if (i < 9) {
+        //         dataToday.push(forecastData[i]);
+        //     }
+        // }
+        // console.log("dataToday = ", dataToday);
+    };
+
+    sortData(forecastData);
 
     return (
         <div>
