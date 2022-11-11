@@ -1,5 +1,9 @@
 import { getDate, convertKelvinToFarenheit } from "helpers.js";
 
+import WeatherIcon from "components/WeatherIcon";
+
+// import sunLogo from "assets/images/01d.png";
+
 const CardTemplate = ({ data }) => {
     const date = getDate(data[0].dt);
 
@@ -41,6 +45,7 @@ const CardTemplate = ({ data }) => {
             )}
             <p>
                 <b>
+                    <WeatherIcon />
                     {data[0].weather[0].description}
                     <br></br>
                     {convertKelvinToFarenheit(data[0].main.temp)}°F
