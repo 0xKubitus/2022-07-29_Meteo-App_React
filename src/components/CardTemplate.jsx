@@ -20,6 +20,14 @@ const CardTemplate = ({ data }) => {
     console.log(`${date} highestKelvinTemp =`, highestKelvinTemp);
     console.log(`${date} lowestKelvinTemp =`, lowestKelvinTemp);
 
+    const convertKelvinToFarenheit = (temp) => {
+        const tempInFarenheit = (parseFloat(temp) - 273.15) * 1.8 + 32;
+        // console.log(temp, tempInFarenheit);
+        return tempInFarenheit.toFixed(2);
+    };
+    convertKelvinToFarenheit(highestKelvinTemp);
+    convertKelvinToFarenheit(lowestKelvinTemp);
+
     return (
         <div className="card-template">
             {data[0] !== "undefined" && (
@@ -36,7 +44,7 @@ const CardTemplate = ({ data }) => {
                 Daily Min. = {lowestKelvinTemp}°F
                 <br></br>
                 {/* Daily Max = {data[0].main.temp_max}°F */}
-                Daily Max = {highestKelvinTemp}°F
+                Daily Max = {convertKelvinToFarenheit(highestKelvinTemp)}°F
             </p>
         </div>
     );
