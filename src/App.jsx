@@ -46,9 +46,9 @@ function App() {
         userGeolocalization();
     }, [lat, lon]);
 
-    useEffect(() => {
-        console.log(`user position set to: ${userCity}`);
-    }, [userCity]);
+    // useEffect(() => {
+    //     console.log(`user position set to: ${userCity}`);
+    // }, [userCity]);
 
     const errorCallback = (error) => {
         const geolocRequestError = document.getElementById("geolocRequestError");
