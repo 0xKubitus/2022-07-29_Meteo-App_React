@@ -2,13 +2,7 @@ import CardTemplate from "./CardTemplate";
 
 const DisplayWeatherForecast = ({ data }) => {
     const dataList = [];
-    dataList.push(data.list[0], data.list[8], data.list[16], data.list[24], data.list[32]);
-
-    // const filterData = () => {
-    //     for (i = 0; i < data.list.length; i + 8) {
-    //         dataList.push(data.list[i]);
-    //     }
-    // };
+    dataList.push(data.list[0], data.list[8], data.list[16], data.list[24], data.list[32]); // it'd be nice to find a better way to list the right objects but it's fine for now...
 
     console.log("5days forecast data = ", dataList);
 
