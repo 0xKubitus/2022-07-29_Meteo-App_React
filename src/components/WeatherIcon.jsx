@@ -15,7 +15,9 @@ const WeatherIcon = ({ data }) => {
     // if (data.weather.main !== "undefined" && data.weather.main !== "Clouds") {
 
     // console.log("icon data = ", data);
+
     console.log("icon data.main = ", data.main);
+    console.log("icon data = ", data);
 
     if (data.main !== "undefined") {
         if (data.main === "Clear") {
@@ -24,6 +26,18 @@ const WeatherIcon = ({ data }) => {
             return <img src={snowLogo} alt="snow" />;
         } else if (data.main === "Thunderstorm") {
             return <img src={thunderLogo} alt="thunderstorm" />;
+        } else if (data.icon === "09n") {
+            return <img src={showerRainLogo} alt="shower" />;
+        } else if (data.icon === "10n") {
+            return <img src={rainLogo} alt="rain" />;
+        } else if (data.icon === "02n") {
+            return <img src={fewCloudsLogo} alt="few clouds" />;
+        } else if (data.icon === "03n") {
+            return <img src={scatteredCloudsLogo} alt="scattered clouds" />;
+        } else if (data.icon === "04n") {
+            return <img src={brokenCloudsLogo} alt="broken clouds" />;
+        } else if (data.icon === "50n") {
+            return <img src={mistLogo} alt="atmosphere" />;
         }
     }
 };

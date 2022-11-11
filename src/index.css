@@ -19,11 +19,24 @@ body {
 
 .cards-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+
+.card-template {
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 250px;
+    border-right: 1px solid lightgrey;
+    border-left: 1px solid lightgrey;
+}
+
+.icon-and-avg-temp {
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
-
-/* .card-template {
-    margin-right: 5px;
-    margin-left: 5px;
-} */

@@ -45,14 +45,17 @@ const CardTemplate = ({ data }) => {
                     </p>
                 </div>
             )}
-            <p>
-                <b>
-                    <WeatherIcon data={forecastData[0].weather[0]} />
-                    {data[0].weather[0].description}
-                    <br></br>
-                    {convertKelvinToFarenheit(data[0].main.temp)}°F
-                </b>
-            </p>
+            <div className="icon-and-avg-temp">
+                <WeatherIcon data={forecastData[0].weather[0]} />
+                <span>
+                    <b>
+                        {convertKelvinToFarenheit(data[0].main.temp)}°F
+                        <br></br>
+                    </b>
+                </span>
+            </div>
+
+            <h3>{data[0].weather[0].description}</h3>
             <p>
                 {/* Daily Min. = {data[0].main.temp_min}°F */}
                 {/* Daily Min. = {lowestKelvinTemp}°F */}
