@@ -6,7 +6,7 @@ import DisplayWeatherForecast from "components/WeatherForecast";
 // import { ... } from "./helpers";
 
 const API_Key = process.env.REACT_APP_OPENWEATHER_API_KEY;
-const openWeatherAPIurlStart = "https://api.openweathermap.org/data/2.5/forecast?";
+const openWeatherAPIurlStart = "https://api.openweathermap.org/data/2.5/forecast/daily?";
 
 function App() {
     const [lat, setLat] = useState();
@@ -31,16 +31,16 @@ function App() {
 
             getUserCurrentPosition();
 
-            const requestURL = `${openWeatherAPIurlStart}lat=${lat}&lon=${lon}&appid=${API_Key}`;
-            // console.log("requestURL = ", requestURL);
+            const requestURL = `${openWeatherAPIurlStart}lat=${lat}&lon=${lon}&cnt=4&appid=${API_Key}`;
+            console.log("requestURL = ", requestURL);
 
-            await fetch(requestURL)
-                .then((response) => response.json())
-                .then((result) => {
-                    setData(result);
-                    console.log("API request results = ", result);
-                    setUserCity(result.city.name);
-                });
+            // await fetch(requestURL)
+            //     .then((response) => response.json())
+            //     .then((result) => {
+            //         setData(result);
+            //         console.log("API request results = ", result);
+            //         setUserCity(result.city.name);
+            //     });
         };
 
         userGeolocalization();
@@ -68,27 +68,27 @@ function App() {
         }
     };
 
-    return (
-        <div className="App">
-            <WelcomeUser />
-            {userPositionIsShared === undefined && <Loader />} {/* conditionnal rendering for 'Loader' component */}
-            {typeof data.city != "undefined" ? (
-                <div>
-                    <h2>
-                        <u>{data.city.name}</u> 5-Days Weather Forecast:
-                    </h2>
-                    <DisplayWeatherForecast data={data} />
-                </div>
-            ) : (
-                <div></div>
-            )}{" "}
-            {/* when data is 'undefined' it will show an empty div, else it will return my 'DisplayWeatherForecast' component */}
-            <h2 id="geolocRequestError" className="hidden">
-                {/* another kind (among many others) of conditionnal rendering */}
-                no error
-            </h2>
-        </div>
-    );
+    // return (
+    //     <div className="App">
+    //         <WelcomeUser />
+    //         {userPositionIsShared === undefined && <Loader />} {/* conditionnal rendering for 'Loader' component */}
+    //         {typeof data.city != "undefined" ? (
+    //             <div>
+    //                 <h2>
+    //                     <u>{data.city.name}</u> 5-Days Weather Forecast:
+    //                 </h2>
+    //                 <DisplayWeatherForecast data={data} />
+    //             </div>
+    //         ) : (
+    //             <div></div>
+    //         )}{" "}
+    //         {/* when data is 'undefined' it will show an empty div, else it will return my 'DisplayWeatherForecast' component */}
+    //         <h2 id="geolocRequestError" className="hidden">
+    //             {/* another kind (among many others) of conditionnal rendering */}
+    //             no error
+    //         </h2>
+    //     </div>
+    // );
 }
 
 export default App;
