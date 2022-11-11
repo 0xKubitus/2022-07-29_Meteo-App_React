@@ -16,3 +16,9 @@ body {
 .hidden {
     display: none;
 }
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
