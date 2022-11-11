@@ -6,10 +6,10 @@ const DisplayWeatherForecast = ({ data }) => {
 
     return (
         <div>
-            {dataList.map((day) => {
+            {dataList.map((entry) => {
                 return (
                     <div>
-                        <CardTemplate data={day} />
+                        <CardTemplate data={entry} />
                     </div>
                 );
             })}
