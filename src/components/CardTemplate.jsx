@@ -1,11 +1,13 @@
+import { useState, useEffect } from "react";
+
 import { getDate, convertKelvinToFarenheit } from "helpers.js";
-
 import WeatherIcon from "components/WeatherIcon";
-
 // import sunLogo from "assets/images/01d.png";
 
 const CardTemplate = ({ data }) => {
-    const date = getDate(data[0].dt);
+    const [forecastData, setForecastData] = useState(data);
+
+    const date = getDate(forecastData[0].dt);
 
     // console.log("data = ", data);
 
@@ -45,7 +47,7 @@ const CardTemplate = ({ data }) => {
             )}
             <p>
                 <b>
-                    <WeatherIcon />
+                    <WeatherIcon data={forecastData[0].weather[0]} />
                     {data[0].weather[0].description}
                     <br></br>
                     {convertKelvinToFarenheit(data[0].main.temp)}°F
