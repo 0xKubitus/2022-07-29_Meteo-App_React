@@ -30,31 +30,43 @@ const DisplayWeatherForecast = ({ data }) => {
                 dataDayFour.push(forecastData[i]);
             }
         }
-        console.log("dataToday = ", dataToday);
-        console.log("dataToday.length = ", dataToday.length);
-        console.log("dataDayOne = ", dataDayOne);
-        console.log("dataDayOne.length = ", dataDayOne.length);
-        console.log("dataDayTwo = ", dataDayTwo);
-        console.log("dataDayTwo.length = ", dataDayTwo.length);
-        console.log("dataDayThree = ", dataDayThree);
-        console.log("dataDayThree.length = ", dataDayThree.length);
-        console.log("dataDayFour = ", dataDayFour);
-        console.log("dataDayFour.length = ", dataDayFour.length);
+        // console.log("dataToday = ", dataToday);
+        // console.log("dataToday.length = ", dataToday.length);
+        // console.log("dataDayOne = ", dataDayOne);
+        // console.log("dataDayOne.length = ", dataDayOne.length);
+        // console.log("dataDayTwo = ", dataDayTwo);
+        // console.log("dataDayTwo.length = ", dataDayTwo.length);
+        // console.log("dataDayThree = ", dataDayThree);
+        // console.log("dataDayThree.length = ", dataDayThree.length);
+        // console.log("dataDayFour = ", dataDayFour);
+        // console.log("dataDayFour.length = ", dataDayFour.length);
     };
 
     groupDataPerDay(forecastData);
 
     return (
-        <div>
-            {dataList.map((entry) => {
-                return (
-                    <div>
-                        <CardTemplate data={entry} />
-                    </div>
-                );
-            })}
-        </div>
+        // <div>
+        //     {forecastData.map((entry) => {
+        //         return (
+        <>
+            <div className="today-card">
+                <CardTemplate data={dataToday} />
+            </div>
+
+            <div className="cards-container">
+                {/* <CardTemplate data={entry} /> */}
+
+                <CardTemplate data={dataDayOne} />
+                <CardTemplate data={dataDayTwo} />
+                <CardTemplate data={dataDayThree} />
+                <CardTemplate data={dataDayFour} />
+            </div>
+        </>
     );
+    // }
+    // )}
+    // </div>
+    // );
 };
 
 export default DisplayWeatherForecast;

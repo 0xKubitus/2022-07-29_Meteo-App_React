@@ -22,3 +22,9 @@ export const getDate = (date) => {
     };
     return new Date().getDay() === day ? "Today" : getDay();
 };
+
+export const convertKelvinToFarenheit = (temp) => {
+    const tempInFarenheit = (parseFloat(temp) - 273.15) * 1.8 + 32;
+    // console.log(temp, tempInFarenheit);
+    return tempInFarenheit.toFixed(2);
+};
