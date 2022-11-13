@@ -35,7 +35,7 @@ const CardTemplate = ({ data }) => {
     // convertKelvinToFarenheit(lowestKelvinTemp);
 
     return (
-        <div className="card-template">
+        <div className="weather-card">
             {data[0] !== "undefined" && (
                 <div>
                     <p>
