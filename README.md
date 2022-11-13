@@ -1,22 +1,44 @@
 <div align="center">
 
-[![THP Badge](https://github.com/0xKubitus/Usefull-Stuff-for-README/blob/main/assets/mkdwn-badges/the-hacking-project.svg)](https://www.thehackingproject.org/)
-
 #### July 29th 2022
+
+[![THP Badge](https://github.com/0xKubitus/Usefull-Stuff-for-README/blob/main/assets/mkdwn-badges/the-hacking-project.svg)](https://www.thehackingproject.org/)
 
 </br>
 
 # my React Weather forecast App
 
+![Javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+
+</br>
+
 ### Introduction to React Single Page Apps and JSX, but also:
 
-### -> React Components;
-
-### -> React State & LifeCycle => useState() & useEffect() hooks;
-
-### -> conditional rendering.
-
 </div>
+
+#### -> React Components;
+
+#### -> React State & LifeCycle => useState() & useEffect() hooks;
+
+#### -> conditional rendering.
+
+<hr>
+</br>
+
+
+
+
+
+
+
+
+
+versions:
+
+      "react": "^18.2.0"
+      "react-router-dom": "^6.3.0"
+
 </br>
 
 <hr>
@@ -96,22 +118,8 @@ N'oublie pas de bien découper les composants de ton application afin d'éviter 
 
 </details>
 
+</br>
 <hr>
-</br>
-
-<div align="center">
-
-![Javascript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-
-</div>
-
-versions:
-
-      "react": "^18.2.0"
-      "react-router-dom": "^6.3.0"
-
-</br>
 </br>
 
 ## How to use this repo:
