@@ -55,11 +55,23 @@ const DisplayWeatherForecast = ({ data }) => {
 
             <div className="cards-container">
                 {/* <CardTemplate data={entry} /> */}
+                <div class="row">
+                    <div class="column">
+                        <CardTemplate data={dataDayOne} />
+                    </div>
+                    <div class="column">
+                        <CardTemplate data={dataDayTwo} />
+                    </div>
+                </div>
 
-                <CardTemplate data={dataDayOne} />
-                <CardTemplate data={dataDayTwo} />
-                <CardTemplate data={dataDayThree} />
-                <CardTemplate data={dataDayFour} />
+                <div class="row">
+                    <div class="column">
+                        <CardTemplate data={dataDayThree} />
+                    </div>
+                    <div class="column">
+                        <CardTemplate data={dataDayFour} />
+                    </div>
+                </div>
             </div>
         </>
     );
