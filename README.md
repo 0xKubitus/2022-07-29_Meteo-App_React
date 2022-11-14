@@ -70,8 +70,6 @@ As long as the user has not indicated whether or not he accepts geolocation, and
 
 If the user refuses to be geolocated, then you will have to display a message telling the user that the application cannot display their weather.
 
-Once the user's home weather is displayed, there will be 4 buttons on your page allowing you to change the city: "San Francisco", "Libreville", "Tokyo" and "Montreal".
-
 Depending on the return from the API, you will have to display an icon (sun, cloud, rain...). You can find <a href="https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2">here</a> documentation about Weather Conditions.
 
 The weather must contain cards that display at least: the minimum temperature, the maximum temperature, an icon, and the day of the week.
@@ -107,8 +105,6 @@ Par défaut, tu devras <a href="https://developer.mozilla.org/fr/docs/Web/API/Ge
 Tant que l'utilisateur n'a pas renseigné s'il accepte ou non la géolocalisation, et tant que la réponse de l'API n'a pas été reçue, tu afficheras un petit loading, grâce au module NPM <a href="https://www.npmjs.com/package/react-loading">react-loading</a>.
 
 Si l'utilisateur refuse d'être géolocalisé, alors tu devras afficher un message indiquant à l'utilisateur que l'application ne peut pas afficher sa météo.
-
-Une fois la météo d'accueil de l'utilisateur affiché, il y aura sur ta page 4 boutons permettant de changer la ville : "San Francisco", "Libreville", "Tokyo" et "Montréal".
 
 En fonction du retour de l'API, tu devras afficher une icône (soleil, nuage, pluie...). Tu peux trouver <a href="https://openweathermap.org/weather-conditions#Weather-Condition-Codes-2"> ici</a> la documentation à propos des Weather Conditions.
 
