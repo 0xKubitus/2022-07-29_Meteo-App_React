@@ -141,6 +141,6 @@ You have access to my weather forecast app in your browser :ok_hand:
 
 </br>
       
-# Thanks:
+# Acknowledgments:
 
 <a href="[https://www.flaticon.com/free-icons/weather](https://www.flaticon.com/authors/freepik)" title="weather icons">Weather icons created by Freepik - Flaticon</a>
