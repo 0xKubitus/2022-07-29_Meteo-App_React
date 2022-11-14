@@ -59,7 +59,7 @@ This will be the time to discover how component logic in React is more pleasant 
 The API documentation to use for the project is <a href="https://openweathermap.org/">here</a>.
 
 </br>
-</br>
+
 </br>
 
 # 2. THE PROJECT
@@ -95,7 +95,7 @@ Ce sera le moment de découvrir à quel point la logique par composant dans Reac
 La documentation de l'API à utiliser pour le projet est <a href="https://openweathermap.org/">ici</a>.
 
 </br>
-</br>
+
 </br>
 
 # 2. LE PROJET
