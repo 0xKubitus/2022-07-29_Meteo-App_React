@@ -49,17 +49,29 @@ const DisplayWeatherForecast = ({ data }) => {
         //     {forecastData.map((entry) => {
         //         return (
         <>
-            <div className="today-card">
+            <div id="today-card-div">
                 <CardTemplate data={dataToday} />
             </div>
 
-            <div className="cards-container">
+            <div id="other-days-cards-div">
                 {/* <CardTemplate data={entry} /> */}
+                <div class="row">
+                    <div class="column">
+                        <CardTemplate data={dataDayOne} />
+                    </div>
+                    <div class="column">
+                        <CardTemplate data={dataDayTwo} />
+                    </div>
+                </div>
 
-                <CardTemplate data={dataDayOne} />
-                <CardTemplate data={dataDayTwo} />
-                <CardTemplate data={dataDayThree} />
-                <CardTemplate data={dataDayFour} />
+                <div class="row">
+                    <div class="column">
+                        <CardTemplate data={dataDayThree} />
+                    </div>
+                    <div class="column">
+                        <CardTemplate data={dataDayFour} />
+                    </div>
+                </div>
             </div>
         </>
     );

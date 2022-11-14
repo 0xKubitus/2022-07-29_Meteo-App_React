@@ -21,23 +21,23 @@ const WeatherIcon = ({ data }) => {
 
     if (data.main !== "undefined") {
         if (data.main === "Clear") {
-            return <img src={clearLogo} alt="clear sky" />;
+            return <img src={clearLogo} alt="clear sky" className="weather-logo" />;
         } else if (data.main === "Snow") {
-            return <img src={snowLogo} alt="snow" />;
+            return <img src={snowLogo} alt="snow" className="weather-logo" />;
         } else if (data.main === "Thunderstorm") {
-            return <img src={thunderLogo} alt="thunderstorm" />;
-        } else if (data.icon === "09n") {
-            return <img src={showerRainLogo} alt="shower" />;
-        } else if (data.icon === "10n") {
-            return <img src={rainLogo} alt="rain" />;
-        } else if (data.icon === "02n") {
-            return <img src={fewCloudsLogo} alt="few clouds" />;
-        } else if (data.icon === "03n") {
-            return <img src={scatteredCloudsLogo} alt="scattered clouds" />;
-        } else if (data.icon === "04n") {
-            return <img src={brokenCloudsLogo} alt="broken clouds" />;
-        } else if (data.icon === "50n") {
-            return <img src={mistLogo} alt="atmosphere" />;
+            return <img src={thunderLogo} alt="thunderstorm" className="weather-logo" />;
+        } else if (data.icon === "09d") {
+            return <img src={showerRainLogo} alt="shower" className="weather-logo" />;
+        } else if (data.icon === "10d") {
+            return <img src={rainLogo} alt="rain" className="weather-logo" />;
+        } else if (data.icon === "02d") {
+            return <img src={fewCloudsLogo} alt="few clouds" className="weather-logo" />;
+        } else if (data.icon === "03d") {
+            return <img src={scatteredCloudsLogo} alt="scattered clouds" className="weather-logo" />;
+        } else if (data.icon === "04d") {
+            return <img src={brokenCloudsLogo} alt="broken clouds" className="weather-logo" />;
+        } else if (data.icon === "50d") {
+            return <img src={mistLogo} alt="atmosphere" className="weather-logo" />;
         }
     }
 };

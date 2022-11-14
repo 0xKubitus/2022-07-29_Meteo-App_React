@@ -35,7 +35,7 @@ const CardTemplate = ({ data }) => {
     // convertKelvinToFarenheit(lowestKelvinTemp);
 
     return (
-        <div className="card-template">
+        <div className="weather-card">
             {data[0] !== "undefined" && (
                 <div>
                     <p>
@@ -55,7 +55,7 @@ const CardTemplate = ({ data }) => {
                 </span>
             </div>
 
-            <h3>{data[0].weather[0].description}</h3>
+            <h3 id="weather-description">{data[0].weather[0].description}</h3>
             <p>
                 {/* Daily Min. = {data[0].main.temp_min}°F */}
                 {/* Daily Min. = {lowestKelvinTemp}°F */}
