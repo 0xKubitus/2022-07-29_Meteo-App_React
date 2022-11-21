@@ -1,7 +1,5 @@
 <div align="center">
 
-#### July 29th 2022
-
 [![THP Badge](https://github.com/0xKubitus/Usefull-Stuff-for-README/blob/main/assets/mkdwn-badges/the-hacking-project.svg)](https://www.thehackingproject.org/)
 
 </br>
